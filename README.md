@@ -15,7 +15,7 @@ _Please submit all problems to the general issue list first, we will sort out th
 | Project | Purpose | Issues |
 | ------- | ------- | ------ |
 | [DukeCon_Server](https://github.com/dukecon/dukecon_server) | REST services and starter project for HTML5 App | [Server Issues](https://github.com/dukecon/dukecon_server/issues) |
-| [DukeCon_HTML5](https://github.com/dukecon/dukecon_html5) | HTML5 App (mobile + browser) | [HTML5 App Issues](https://github.com/dukecon/dukecon_html/issues) |
+| [DukeCon_HTML5](https://github.com/dukecon/dukecon_html5) | HTML5 App (mobile + browser) | [HTML5 App Issues](https://github.com/dukecon/dukecon_html5/issues) |
 | [DukeCon_Flex](https://github.com/dukecon/dukecon_flex) | Flex (Flash) App (mobile) | [Flex App Issues](https://github.com/dukecon/dukecon_flex/issues) |
 | [DukeCon_Server_Docker](https://github.com/dukecon/dukecon_server_docker) | Docker container with the server application | [DukeCon Docker Issues](https://github.com/dukecon/dukecon_server_docker/issues) |
 | [DukeCon_Infra](https://github.com/dukecon/dukecon_infra) | Operational runtime and CI infrastructure setup | [Infrastructure Issues](https://github.com/dukecon/dukecon_infra/issues) |
