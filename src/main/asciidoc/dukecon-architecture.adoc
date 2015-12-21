@@ -3,7 +3,7 @@
 :lang: en
 :icons: font
 :toc:
-:imagesdir: images
+ifndef::imagesdir[:imagesdir: images]
 
 == Introduction
 
