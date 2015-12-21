@@ -2,7 +2,6 @@
 :author: Gerd Aschemann <gerd@aschemann.net>
 :lang: en
 :icons: font
-:data-uri:
 :toc:
 :imagesdir: images
 
