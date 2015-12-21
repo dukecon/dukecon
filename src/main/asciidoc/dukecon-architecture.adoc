@@ -1,0 +1,38 @@
+= DukeCon architecture
+:author: Gerd Aschemann <gerd@aschemann.net>
+:lang: en
+:icons: font
+:data-uri:
+:toc:
+:imagesdir: images
+
+== Introduction
+
+["plantuml", "dukecon-architecture", "svg"]
+------------------------------------------------
+
+:Conference Participant:
+
+node DukeCon-Server <<Docker : Java8>> {
+    [DukeCon] <<Service>>
+}
+
+node KeyCloak-Server <<Docker : WildFly>> {
+    [KeyCloak] <<Service>>
+}
+
+node DukeCon-DB <<Docker : PostgreSQL>> {
+    database DukeCon_PostgreSQL
+}
+
+node KeyCloak-DB <<Docker : PostgreSQL>> {
+    database KeyCloak_PostgreSQL
+}
+
+:Conference Participant: -right-> (DukeCon) : Compile conference program
+:Conference Participant: -right-> (KeyCloak) : Authenticate
+
+[DukeCon] --> [DukeCon_PostgreSQL] : JDBC
+[KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
+------------------------------------------------
+
