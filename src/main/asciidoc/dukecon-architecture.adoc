@@ -9,29 +9,62 @@ ifndef::imagesdir[:imagesdir: images]
 
 ["plantuml", "dukecon-architecture", "svg"]
 ------------------------------------------------
+skinparam handwritten true
 
-:Conference Participant:
+actor :Conference Participant:
 
-node DukeCon-Server <<Docker : Java8>> {
-    [DukeCon] <<Service>>
+node "PC / Browser" {
+    [DukeCon HTML5] <<Client>>
 }
 
-node KeyCloak-Server <<Docker : WildFly>> {
-    [KeyCloak] <<Service>>
+node "Mobile Device" {
+    [DukeCon Flex] <<Client>>
+'    [DukeCon Cordova] <<Client>>
 }
 
-node DukeCon-DB <<Docker : PostgreSQL>> {
-    database DukeCon_PostgreSQL
+cloud "DukeCon Infrastructure" {
+    node DukeCon-Server <<Docker : Java8>> {
+        [DukeCon] <<Service>>
+    }
+
+    node KeyCloak-Server <<Docker : WildFly>> {
+        [KeyCloak] <<Service>>
+    }
+
+    node DukeCon-DB <<Docker : PostgreSQL>> {
+        database DukeCon_PostgreSQL
+    }
+
+    node KeyCloak-DB <<Docker : PostgreSQL>> {
+        database KeyCloak_PostgreSQL
+    }
+    [DukeCon] --> [DukeCon_PostgreSQL] : JDBC
+    [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
 }
 
-node KeyCloak-DB <<Docker : PostgreSQL>> {
-    database KeyCloak_PostgreSQL
+:Conference Participant: -down-> (DukeCon HTML5) : Compile conference program (at Home?)
+':Conference Participant: -down-> (DukeCon Cordova) : Read/Compile conference program (during Conference)
+:Conference Participant: -down-> (DukeCon Flex) : Read/Compile conference program (during Conference)
+
+(DukeCon HTML5) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeCon HTML5) -down-> (KeyCloak) : Authenticate
+
+(DukeCon Flex) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeCon Flex) -down-> (KeyCloak) : Authenticate
+
+'(DukeCon Cordova) -down-> (DukeCon) : Conf. Data/Favorites
+'(DukeCon Cordova) -down-> (KeyCloak) : Authenticate
+
+cloud "Social Media Cloud(s)" {
+    top to bottom direction
+
+    node Github <<OAuth Provider>>
+    node Google <<OAuth Provider>>
+    node Twitter <<OAuth Provider>>
 }
 
-:Conference Participant: -right-> (DukeCon) : Compile conference program
-:Conference Participant: -right-> (KeyCloak) : Authenticate
-
-[DukeCon] --> [DukeCon_PostgreSQL] : JDBC
-[KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
+(KeyCloak) -right-> (Github)
+(KeyCloak) -right-> (Google)
+(KeyCloak) -right-> (Twitter)
 ------------------------------------------------
 

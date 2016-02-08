@@ -1,8 +1,33 @@
 [[section-system-scope-and-context]]
 == System Scope and Context
 
- 
 
+
+["plantuml", "dukecon-systemcontext", "svg"]
+------------------------------------------------
+skinparam handwritten true
+
+actor :Conference Participant:
+
+cloud "DukeCon Infra" #lightgray {
+    [DukeCon] <<Service>>
+}
+
+cloud "DOAG" {
+    [Backoffice] <<Service>>
+    [Vortragsplaner] <<Service>>
+}
+
+:Conference Participant: -right-> (DukeCon) : Read/Compile conference program (via mobile app)
+:Conference Participant: -right-> (Vortragsplaner) : Read/Compile conference program (old style)
+
+(Backoffice) -left-> (DukeCon) : Data Export
+(Backoffice) -left-> (Vortragsplaner) : Data Export
+
+actor :Back-Officer:
+
+:Back-Officer: -left-> (Backoffice) : Maintain JavaLand program
+------------------------------------------------
 
 
 === Business Context
