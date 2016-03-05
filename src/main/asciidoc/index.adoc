@@ -3,9 +3,18 @@
 //
 // ====================================
 
-= image:arc42-logo.png[arc42] Template
-// toc-title definition MUST follow document title without blank line!
+// configuration
+include::config.adoc[]
+
+= DukeCon, Architecture
+:author: Gerd Aschemann <gerd@dukecon.org> + Falk Sippach <falk@dukecon.org>
 :toc-title: Table of Contents
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
 
 //additional style for arc42 help callouts
 ifdef::basebackend-html[]
@@ -22,23 +31,10 @@ ifdef::basebackend-html[]
 ++++
 endif::basebackend-html[]
 
-// configure EN settings for asciidoc
-include::config.adoc[]
+== Disclaimer
+I provide absolutely *no guarantee*, neither for the accuracy of this documentation nor for any property or feature of the software described here.
 
-
-include::about-arc42.adoc[]
-
-// horizontal line
-***
-
-[NOTE]
-====
-This version of the template contains some help and explanations.
-It is used for familiarization with arc42 and the understanding of the concepts.
-For documentation of your own system you use better the _plain_ version.
-====
-
-
+Do not use this software in critical situations or projects.
 
 // numbering from here on
 :numbered:
@@ -91,22 +87,11 @@ include::11_technical_risks.adoc[]
 // 12. Glossary
 include::12_glossary.adoc[]
 
+include::about-arc42.adoc[]
 
 // appendices:
 // =====================================
 
 <<<<
 // Appendix References
-include::appendix-references.adoc[]
-
-<<<<
-// Appendix Examples
-include::appendix-examples.adoc[]
-
-<<<<
-// Contributing and Contributors
-include::appendix-contributing.adoc[]
-
-<<<<
-// Approved Practitioner for arc42
-include::appendix-practitioner.adoc[]
+//include::appendix-api.adoc[]
