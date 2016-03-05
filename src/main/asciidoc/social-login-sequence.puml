@@ -1,0 +1,21 @@
+@startuml
+actor browser as "User/Browser"
+participant html5 as "HTML5-Client"
+participant Keycloak
+participant socialprovider as "Social Provider"
+participant server as "Rest-Server"
+
+browser -> html5 : Request (not authenticated)
+browser <-- html5 : Redirect to Keycloak
+browser -> Keycloak : Request (not authenticated)
+browser <-- Keycloak : Login page
+browser -> Keycloak : Choose social login
+browser <-- Keycloak : Redirect to social login page
+browser -> socialprovider : Login
+browser <-- socialprovider : Redirect to client
+browser -> Keycloak : Social authenticate
+browser <-- Keycloak : Redirect to client (with access and id token)
+html5 -> server : JavaScript call to REST backend (with Bearer-Token)
+html5 <-- server
+browser <-- html5 : Response
+@enduml

@@ -40,13 +40,17 @@ Mit Objektdiagrammen können Sie Schnappschüsse der existierenden Laufzeitobjek
 Beziehungen. Die UML bietet dabei die Möglichkeit zwischen aktiven und passiven Objekten zu unterscheiden.
 ****
 
-=== Laufzeitszenario 1
+=== Login mit Keycloak
 
-[role="arc42help"]
-****
-*  Laufzeitdiagramm
-*  Erläuterung der Besonderheiten bei dem Zusammenspiel der Bausteininstanzen in diesem Diagramm
-****
+["plantuml", "login-sequence", "svg"]
+------------------------------------------------
+include::../login-sequence.puml[]
+------------------------------------------------
+
+["plantuml", "social-login-sequence", "svg"]
+------------------------------------------------
+include::../social-login-sequence.puml[]
+------------------------------------------------
 
 === Laufzeitszenario 2
 

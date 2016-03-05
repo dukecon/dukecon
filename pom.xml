@@ -56,7 +56,7 @@
                             <backend>html5</backend>
 			                <sourceDirectory>${basedir}/src/main/asciidoc/de/</sourceDirectory>
                     		<outputDirectory>${project.build.directory}/generated-docs/de/</outputDirectory>
-							<sourceDocumentName>arc42-template.adoc</sourceDocumentName>
+							<sourceDocumentName>index.adoc</sourceDocumentName>
                             <attributes>
                                 <imagesdir>./images</imagesdir>
                             </attributes>
