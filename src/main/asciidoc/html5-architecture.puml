@@ -18,7 +18,7 @@ node "DukeCloak" {
     [Keycloak JS Client]
 }
 
-cloud "DukeCon Backend" {
+cloud "DukeCon Backend"  #lightgray {
     [Talks\rFavorites\rKeycloak]
 }
 
