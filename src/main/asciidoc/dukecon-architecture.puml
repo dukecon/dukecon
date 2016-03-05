@@ -1,0 +1,59 @@
+@startuml
+skinparam handwritten true
+
+actor :Conference Participant:
+
+node "PC / Browser" {
+    [DukeCon HTML5] <<Client>>
+}
+
+node "Mobile Device" {
+    [DukeCon Flex] <<Client>>
+'    [DukeCon Cordova] <<Client>>
+}
+
+cloud "DukeCon Infrastructure" {
+    node DukeCon-Server <<Docker : Java8>> {
+        [DukeCon] <<Service>>
+    }
+
+    node KeyCloak-Server <<Docker : WildFly>> {
+        [KeyCloak] <<Service>>
+    }
+
+    node DukeCon-DB <<Docker : PostgreSQL>> {
+        database DukeCon_PostgreSQL
+    }
+
+    node KeyCloak-DB <<Docker : PostgreSQL>> {
+        database KeyCloak_PostgreSQL
+    }
+    [DukeCon] --> [DukeCon_PostgreSQL] : JDBC
+    [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
+}
+
+:Conference Participant: -down-> (DukeCon HTML5) : Compile conference program (at Home?)
+':Conference Participant: -down-> (DukeCon Cordova) : Read/Compile conference program (during Conference)
+:Conference Participant: -down-> (DukeCon Flex) : Read/Compile conference program (during Conference)
+
+(DukeCon HTML5) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeCon HTML5) -down-> (KeyCloak) : Authenticate
+
+(DukeCon Flex) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeCon Flex) -down-> (KeyCloak) : Authenticate
+
+'(DukeCon Cordova) -down-> (DukeCon) : Conf. Data/Favorites
+'(DukeCon Cordova) -down-> (KeyCloak) : Authenticate
+
+cloud "Social Media Cloud(s)" {
+    top to bottom direction
+
+    node Github <<OAuth Provider>>
+    node Google <<OAuth Provider>>
+    node Twitter <<OAuth Provider>>
+}
+
+(KeyCloak) -right-> (Github)
+(KeyCloak) -right-> (Google)
+(KeyCloak) -right-> (Twitter)
+@enduml
