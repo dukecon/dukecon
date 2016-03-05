@@ -23,4 +23,4 @@ Die DukeCon-Anwendung offeriert eine Benutzungsschnittstelle für Konferenzteiln
 (Beispiel-Datensatz)
 
 .DukeCon-Anwendung und Konferenzteilnehmer:
-Nutzungsschnittstelle implementiert in HTML5. Parallel dazu ist eine mobile App auf Basis von Flex implementiert.
+Nutzungsschnittstelle implementiert in HTML5 mit JavaScript auf Basis von Knockout. Parallel dazu ist eine natives Frontend auf Basis von Flex implementiert.
