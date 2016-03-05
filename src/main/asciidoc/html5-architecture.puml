@@ -1,0 +1,32 @@
+@startuml
+skinparam handwritten true
+
+node "DukeCon HTML5" {
+[JQuery\rrequire\rknockout\runderscore]
+[HTML5\rCSS3]
+}
+
+node "HTTP" {
+[ajax]
+}
+
+node "LocalStorage" {
+[JS localStorage]
+}
+
+node "DukeCloak" {
+    [Keycloak JS Client]
+}
+
+cloud "DukeCon Backend"  #lightgray {
+    [Talks\rFavorites\rKeycloak]
+}
+
+HTTP --> (Talks\rFavorites\rKeycloak) : talks,\rfavorites
+HTTP --> (JS localStorage) : talks,\rfavorites
+LocalStorage -up-> (JQuery\rrequire\rknockout\runderscore) : talks,\rfavorites
+DukeCloak --> (Talks\rFavorites\rKeycloak) : auth
+DukeCloak -up-> (JQuery\rrequire\rknockout\runderscore) : auth
+
+
+@enduml

@@ -9,7 +9,7 @@ node "PC / Browser" {
 
 node "Mobile Device" {
     [DukeCon Flex] <<Client>>
-'    [DukeCon Cordova] <<Client>>
+    [DukeCon mobile] <<Client>>
 }
 
 cloud "DukeCon Infrastructure" {

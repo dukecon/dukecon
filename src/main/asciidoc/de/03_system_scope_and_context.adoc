@@ -5,17 +5,17 @@
 
 ["plantuml", "dukecon-systemcontext", "svg"]
 ------------------------------------------------
-include:systemcontext.puml[]
+include::../systemcontext.puml[]
 ------------------------------------------------
 
 === Schnittstellen
 Die DukeCon Anwendung kommuniziert mit seiner Umgebung über folgende Schnittstellen:
 
 .DOAG Backoffice (externes System):
-Als Datenlieferant wird durch DukeCon eine BackOffice-Lösung der DOAG (Deutsche ORACLE-Anwendergruppe e.V.) herangezogen. Ein Back-Officer der DOAG aktualisiert das Konferenzprogramm, aktualisierte Daten stehen damit auch der DukeCon-Anwendung zur Verfügung.
+Als Datenlieferant nutzt DukeCon eine BackOffice-Lösung der DOAG (Deutsche ORACLE-Anwendergruppe e.V.). Ein Back-Officer der DOAG aktualisiert das Konferenzprogramm, aktualisierte Daten stehen damit auch der DukeCon-Anwendung zur Verfügung.
 
 .Konferenzteilnehmer (Anwender):
-Die DukeCon-Anwendung offeriert eine Benutzungsschnittstelle für einen Konferenzteilnehmer. Sie ermöglicht das Zusammenstellen und Abrufen des Konferenzplanes. 
+Die DukeCon-Anwendung offeriert eine Benutzungsschnittstelle für Konferenzteilnehmer. Sie ermöglicht das Zusammenstellen und Abrufen des Konferenzplanes. 
  
 === Technologien:
 .DOAG-Backoffice Lösung und DukeCon-Anwendung:
@@ -23,4 +23,4 @@ Die DukeCon-Anwendung offeriert eine Benutzungsschnittstelle für einen Konferen
 (Beispiel-Datensatz)
 
 .DukeCon-Anwendung und Konferenzteilnehmer:
-Nutzungsschnittstelle implementiert in HTML5. Parallel dazu ist eine mobile App auf Basis von Flex implementiert.
+Nutzungsschnittstelle implementiert in HTML5 mit JavaScript auf Basis von Knockout. Parallel dazu ist eine natives Frontend auf Basis von Flex implementiert.

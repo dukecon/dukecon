@@ -213,6 +213,8 @@ Müssen Sie bestehende Daten migrieren? Wie führen Sie die benötigten syntakti
 
 === Testbarkeit
 
+Tests werden mit Jasmine (Unit/Frontend), Spock (Unit/Backend) und JGiven (Integration/End-To-End) automatisiert.
+
 [role="arc42help"]
 ****
 Unterstützung für einfache (und möglichst automatische) Tests. Diese Eigenschaft bildet die Grundlage für das wichtige Erfolgsmuster "Continous Integration". In Projekten sollte mindestens täglich der gesamte Stand der Entwicklung gebaut und (automatisch) getestet werden - daher spielt Testbarkeit eine wichtige Rolle. Wichtige Stichworte hierzu sind Unit- Tests und Mock-Objekte.
@@ -240,6 +242,15 @@ Wie und wo verwenden Sie Codegeneratoren, um Teile Ihres Systems aus Modellen od
 ****
 
 === Buildmanagement
+
+Das HTML5-Frontend wird als eigenständiges Projekt (Git/Maven) gepflegt und gebaut und als WAR-Overlay über das Backend an den Browser ausgeliefert.
+
+Der Backend-Server wird als Docker-Image erstellt, um ihn
+* für Entwickler bereitzustellen und 
+* ohne Änderung über die verschiedenen Test-Stages bis in Produktion 
+ausrollen zu können.
+
+Als Build-System kommt Maven zum Einsatz, Jenkins als Build-Server, sowie Nexus als Repository-Server für Artefakte.
 
 [role="arc42help"]
 ****
