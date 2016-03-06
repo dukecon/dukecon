@@ -13,7 +13,7 @@ browser <-- Keycloak : Redirect to social login page
 browser -> Keycloak : Social authenticate
 browser -> Keycloak : Login
 browser <-- Keycloak : Redirect to client (with access and id token)
-html5 -> server : JavaScript call to REST backend (with Bearer-Token)
+html5 -> server : JavaScript call to REST\nbackend (with Bearer-Token)
 html5 <-- server
 browser <-- html5 : Response
 @enduml

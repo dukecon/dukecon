@@ -43,11 +43,13 @@ Beziehungen. Die UML bietet dabei die Möglichkeit zwischen aktiven und passiven
 === Login mit Keycloak
 
 ["plantuml", "login-sequence", "svg"]
+.Login sequence
 ------------------------------------------------
 include::../login-sequence.puml[]
 ------------------------------------------------
 
 ["plantuml", "social-login-sequence", "svg"]
+.Login sequence with social provider
 ------------------------------------------------
 include::../social-login-sequence.puml[]
 ------------------------------------------------

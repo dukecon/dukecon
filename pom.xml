@@ -57,8 +57,9 @@
 			                <sourceDirectory>${basedir}/src/main/asciidoc/de/</sourceDirectory>
                     		<outputDirectory>${project.build.directory}/generated-docs/de/</outputDirectory>
 							<sourceDocumentName>index.adoc</sourceDocumentName>
-                            <attributes>
-                                <imagesdir>./images</imagesdir>
+							<imagesDir>../images</imagesDir>
+							<attributes>
+								<imagesdir>./images</imagesdir>
                             </attributes>
                         </configuration>
                     </execution>
@@ -73,6 +74,7 @@
 			                <sourceDirectory>${basedir}/src/main/asciidoc/en/</sourceDirectory>
                     		<outputDirectory>${project.build.directory}/generated-docs/en/</outputDirectory>
 							<sourceDocumentName>index.adoc</sourceDocumentName>
+							<imagesDir>../images</imagesDir>
                             <attributes>
                                 <imagesdir>./images</imagesdir>
                             </attributes>

@@ -3,9 +3,18 @@
 //
 // ====================================
 
-= image:arc42-logo.png[arc42] Template
-// toc-title definition MUST follow document title without blank line!
-:toc-title: Inhaltsverzeichnis
+// configuration
+include::config.adoc[]
+
+= DukeCon, Architecture
+:author: Gerd Aschemann <gerd@dukecon.org> + Falk Sippach <falk@dukecon.org>
+:toc-title: Table of Contents
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 3
+:sectlinks:
 
 //additional style for arc42 help callouts
 ifdef::basebackend-html[]
@@ -22,23 +31,10 @@ ifdef::basebackend-html[]
 ++++
 endif::basebackend-html[]
 
-// configure DE settings for asciidoc
-include::config.adoc[]
+== Disclaimer
+I provide absolutely *no guarantee*, neither for the accuracy of this documentation nor for any property or feature of the software described here.
 
-
-include::about-arc42.adoc[]
-
-// horizontal line
-***
-
-[NOTE]
-====
-Diese Version des Templates enthält Hilfen und Erläuterungen.
-Sie dient der Einarbeitung in arc42 sowie dem Verständnis der Konzepte.
-Für die Dokumentation eigener System verwenden Sie besser die _plain_ Version.
-====
-
-
+Do not use this software in critical situations or projects.
 
 // numbering from here on
 :numbered:
