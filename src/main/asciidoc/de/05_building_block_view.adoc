@@ -148,12 +148,12 @@ sowie deren Zusammenhänge und Abhängigkeiten.
 
 include::template-whitebox.adoc[]
 
-'crashes dot/graphviz under windows 7
+//crashes dot/graphviz under windows 7 and on OSX as well!
 
-'["plantuml", "html5-architecture", "svg"]
-'------------------------------------------------
-'include::../html5-architecture.puml[]
-'------------------------------------------------
+["plantuml", "html5-architecture", "svg"]
+------------------------------------------------
+include::../html5-architecture.puml[]
+------------------------------------------------
 
 
 ===== _Baustein 2.1_ (Blackbox)
