@@ -8,7 +8,7 @@ include::config.adoc[]
 
 = DukeCon, Architecture
 :author: Gerd Aschemann <gerd@dukecon.org> + Falk Sippach <falk@dukecon.org>
-:toc-title: Table of Contents
+:toc-title: Inhaltsverzeichnis
 :doctype: book
 :icons: font
 :source-highlighter: highlightjs
