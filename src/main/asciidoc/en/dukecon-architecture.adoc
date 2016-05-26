@@ -9,6 +9,6 @@ ifndef::imagesdir[:imagesdir: images]
 
 ["plantuml", "dukecon-architecture", "svg"]
 ------------------------------------------------
-include::dukecon-architecture.puml[]
+include::../images/dukecon-architecture.puml[]
 ------------------------------------------------
 

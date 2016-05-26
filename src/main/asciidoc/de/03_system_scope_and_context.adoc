@@ -5,7 +5,7 @@
 
 ["plantuml", "dukecon-systemcontext", "svg"]
 ------------------------------------------------
-include::../systemcontext.puml[]
+include::../images/systemcontext.puml[]
 ------------------------------------------------
 
 === Schnittstellen

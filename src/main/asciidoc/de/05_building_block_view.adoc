@@ -68,7 +68,7 @@ include::template-whitebox.adoc[]
 
 ["plantuml", "dukecon-architecture", "svg"]
 ------------------------------------------------
-include::../dukecon-architecture.puml[]
+include::../images/dukecon-architecture.puml[]
 ------------------------------------------------
 
 
@@ -152,7 +152,7 @@ include::template-whitebox.adoc[]
 
 ["plantuml", "html5-architecture", "svg"]
 ------------------------------------------------
-include::../html5-architecture.puml[]
+include::../images/html5-architecture.puml[]
 ------------------------------------------------
 
 
