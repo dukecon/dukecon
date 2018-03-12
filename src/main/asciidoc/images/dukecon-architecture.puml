@@ -1,7 +1,7 @@
 @startuml
 skinparam handwritten true
 
-actor :DukeCon Officer:
+actor :Conference Organizer:
 actor :Conference Participant:
 actor :Speaker:
 
@@ -14,8 +14,9 @@ node "Native Android Device" {
     [DukeCon Android] <<Client>> as DukeConAndroid
 }
 
-cloud "DOAG Infrastructure" {
-    [DOAG Formes] <<Service>> as DoagFormes #lightgreen
+cloud "Conference Organization Infrastructure" {
+    [Conference Backoffice] <<Service>> as ConferenceBackoffice #lightgreen
+'    [SMTP Server] <<Postfix>> as ConferenceMailer #red
 }
 
 cloud "DukeCon Infrastructure" {
@@ -23,51 +24,56 @@ cloud "DukeCon Infrastructure" {
         [DukeCon] <<Service>> as DukeconService
     }
 
-    node DukeCon-DB <<Docker : PostgreSQL>> {
-        database DukeCon_PostgreSQL
-    }
-    [DukeconService] --> [DukeCon_PostgreSQL] : JDBC
-
     node DukeCon-Feedback-Server <<Docker : Java9>> #red {
         [DukeCon-Feedback] <<Service>> as DukeconFeedbackService #red
     }
 
-    node DukeCon-Feedback-DB <<Docker : PostgreSQL>> #red {
-        database DukeCon_Feedback_PostgreSQL as DukeconFeedbackDB #red
-    }
-    [DukeconFeedbackService] ..> DukeconFeedbackDB : JDBC
-    DukeconService <.right. DukeconFeedbackService : Retrieve Talk + Speaker Data
-
-    node DukeCon-Mail-Server <<Docker>> #red {
-        [SMTP Server] <<Postfix>> as DukeconPostfix #red
-    }
-    [DukeconFeedbackService] ..> DukeconPostfix : SMTP
-
     node KeyCloak-Server <<Docker : WildFly>> {
         [KeyCloak] <<Service>>
     }
+    DukeconService -down-> KeyCloak : Validate token
+    DukeconFeedbackService -down-> KeyCloak : Validate token
 
-    node KeyCloak-DB <<Docker : PostgreSQL>> {
-        database KeyCloak_PostgreSQL
+    together {
+        node DukeCon-DB <<Docker : PostgreSQL>> {
+            database DukeCon_PostgreSQL
+        }
+        [DukeconService] --> [DukeCon_PostgreSQL] : JDBC
+
+        node DukeCon-Feedback-DB <<Docker : PostgreSQL>> #red {
+            database DukeCon_Feedback_PostgreSQL as DukeconFeedbackDB #red
+        }
+        [DukeconFeedbackService] ..> DukeconFeedbackDB : JDBC
+        DukeconService <.right. DukeconFeedbackService : Retrieve talk + speaker data
+
+        node KeyCloak-DB <<Docker : PostgreSQL>> {
+            database KeyCloak_PostgreSQL
+        }
+        [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
     }
-    [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
 }
 
-DoagFormes -right-> DukeconService : Update Talk + Speaker Data
+ConferenceBackoffice -right-> DukeconService : Update talk + speaker data
+ConferenceBackoffice <-left- KeyCloak : Retrieve participant data
+'[DukeconFeedbackService] ..> ConferenceMailer : SMTP
+ConferenceBackoffice .down.> DukeconFeedbackService : Fetch feedback data
 
-:DukeCon Officer: -down-> (DukeCon Admin) : "Update noof participants /\nEnforce data update"
+:Conference Organizer: -down-> (DukeCon Admin) : "Update noof participants /\nEnforce data update"
+:Conference Organizer: -down-> ConferenceBackoffice
+:Conference Organizer: -down-> KeyCloak : Administer / Define roles
 
 :Conference Participant: -down-> DukeConAndroid : Compile conference program
 :Conference Participant: -down-> DukeConPwa : Compile conference program
 
-(DukeConPwa) -down-> (DukeconService) : Conf. Data/Favorites
+(DukeConPwa) -down-> (DukeconService) : Conf. data/favorites
 (DukeConPwa) .down-> (DukeconFeedbackService) : Feedback for talks
 (DukeConPwa) -down-> (KeyCloak) : Authenticate
 
-(DukeConAndroid) -down-> (DukeconService) : Conf. Data/Favorites
-(DukeConAndroid) .down-> (DukeconFeedbackService) : Feedback for talks
-(DukeConAndroid) -down-> (KeyCloak) : Authenticate
+(DukeConAndroid) --> (DukeconService) : Conf. data/favorites
+(DukeconFeedbackService) <.. (DukeConAndroid) : Feedback for talks
+(DukeConAndroid) --> (KeyCloak) : Authenticate
 
-DukeconPostfix --> :Speaker: : Mail
+'ConferenceMailer --> :Speaker: : Mail
+ConferenceBackoffice .down.> :Speaker: : Notification w/ feedback
 
 @enduml
