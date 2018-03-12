@@ -4,14 +4,13 @@ skinparam handwritten true
 actor :DukeCon Officer:
 actor :Conference Participant:
 
-node "PC / Browser" {
+node "Web-Browser Device" {
     [DukeCon Admin] <<Client>>
-    [DukeCon HTML5] <<Client>> as DukeConHtml5PC
+    [DukeCon PWA] <<Client>> as DukeConPwa
 }
 
-node "Mobile Device" {
-    [DukeCon Flex] <<Client>>
-    [DukeCon HTML5] <<Client>> as DukeConHtml5Mobile
+node "Native Android Device" {
+    [DukeCon Android] <<Client>> as DukeConAndroid
 }
 
 cloud "DukeCon Infrastructure" {
@@ -34,29 +33,15 @@ cloud "DukeCon Infrastructure" {
     [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
 }
 
-:DukeCon Officer: -down-> (DukeCon Admin)
-:Conference Participant: -down-> DukeConHtml5PC : Compile conference program (at Home?)
-':Conference Participant: -down-> DukeConHtml5PC : Read/Compile conference program (during Conference)
-:Conference Participant: -down-> (DukeCon Flex) : Read/Compile conference program (during Conference)
+:DukeCon Officer: -down-> (DukeCon Admin) : "Update noof participants /\nEnforce data update"
 
-(DukeCon HTML5) -down-> (DukeCon) : Conf. Data/Favorites
-(DukeCon HTML5) -down-> (KeyCloak) : Authenticate
+:Conference Participant: -down-> DukeConAndroid : Compile conference program
+:Conference Participant: -down-> DukeConPwa : Compile conference program
 
-(DukeCon Flex) -down-> (DukeCon) : Conf. Data/Favorites
-(DukeCon Flex) -down-> (KeyCloak) : Authenticate
+(DukeConPwa) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeConPwa) -down-> (KeyCloak) : Authenticate
 
-'(DukeCon Cordova) -down-> (DukeCon) : Conf. Data/Favorites
-'(DukeCon Cordova) -down-> (KeyCloak) : Authenticate
+(DukeConAndroid) -down-> (DukeCon) : Conf. Data/Favorites
+(DukeConAndroid) -down-> (KeyCloak) : Authenticate
 
-cloud "Social Media Cloud(s)" {
-    top to bottom direction
-
-    node Github <<OAuth Provider>>
-    node Google <<OAuth Provider>>
-    node Twitter <<OAuth Provider>>
-}
-
-(KeyCloak) -right-> (Github)
-(KeyCloak) -right-> (Google)
-(KeyCloak) -right-> (Twitter)
 @enduml
