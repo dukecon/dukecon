@@ -1,15 +1,17 @@
 @startuml
 skinparam handwritten true
 
+actor :DukeCon Officer:
 actor :Conference Participant:
 
 node "PC / Browser" {
-    [DukeCon HTML5] <<Client>>
+    [DukeCon Admin] <<Client>>
+    [DukeCon HTML5] <<Client>> as DukeConHtml5PC
 }
 
 node "Mobile Device" {
     [DukeCon Flex] <<Client>>
-    [DukeCon mobile] <<Client>>
+    [DukeCon HTML5] <<Client>> as DukeConHtml5Mobile
 }
 
 cloud "DukeCon Infrastructure" {
@@ -32,8 +34,9 @@ cloud "DukeCon Infrastructure" {
     [KeyCloak] --> [KeyCloak_PostgreSQL] : JDBC
 }
 
-:Conference Participant: -down-> (DukeCon HTML5) : Compile conference program (at Home?)
-':Conference Participant: -down-> (DukeCon Cordova) : Read/Compile conference program (during Conference)
+:DukeCon Officer: -down-> (DukeCon Admin)
+:Conference Participant: -down-> DukeConHtml5PC : Compile conference program (at Home?)
+':Conference Participant: -down-> DukeConHtml5PC : Read/Compile conference program (during Conference)
 :Conference Participant: -down-> (DukeCon Flex) : Read/Compile conference program (during Conference)
 
 (DukeCon HTML5) -down-> (DukeCon) : Conf. Data/Favorites
