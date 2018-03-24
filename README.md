@@ -56,4 +56,3 @@ The following projects have an unclear maintenance status (as of 2018-03-24):
 * https://github.com/dukecon/dukecon_server_reactor
 * https://github.com/dukecon/url-schema-test
 * https://github.com/dukecon/android-images
-* https://github.com/dukecon/dukecon_server_config
