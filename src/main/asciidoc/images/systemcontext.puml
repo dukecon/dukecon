@@ -1,24 +1,27 @@
 @startuml
 skinparam handwritten true
 
-actor :Conference Participant:
+actor :Conference Participant: as participant
 
 cloud "DukeCon Infra" #lightgray {
-    [DukeCon] <<Service>>
+    [DukeCon] <<Platform>> #green
 }
 
-cloud "DOAG" {
-    [Backoffice] <<Service>>
-    [Vortragsplaner] <<Service>>
+cloud "DOAG Infra" {
+    [Formes] <<Platform>> #lightgreen
+    [Vortragsplaner] <<Platform>> #red
+    note left of Vortragsplaner
+        switched off
+    endnote
 }
 
-:Conference Participant: -right-> (DukeCon) : Read/Compile conference program (via mobile app)
-:Conference Participant: -right-> (Vortragsplaner) : Read/Compile conference program (old style)
+participant -down-> (DukeCon) : Read/Compile conference program (via DukeCon apps)
+participant -down-> (Vortragsplaner) : Read/Compile conference program (old style)
 
-(Backoffice) -left-> (DukeCon) : Data Export
-(Backoffice) -left-> (Vortragsplaner) : Data Export
+(Formes) -left-> (Vortragsplaner) : Data Export
+(Formes) -right-> (DukeCon) : Data Export
 
-actor :Back-Officer:
+actor :Back-Officer: as backofficer
 
-:Back-Officer: -left-> (Backoffice) : Maintain JavaLand program
+backofficer -up-> (Formes) : Maintain JavaLand program
 @enduml

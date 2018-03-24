@@ -2,6 +2,11 @@
 
 == Kontextabgrenzung
 
+IMPORTANT: DukeCon ist im folgenden beispielhaft im Kontext der _DOAG_ (Deutsche ORACLE-Anwendergruppe e.V.) resp. der
+Javaland-Konferenzen dargestellt. Die DOAG bzw. die _DOAG Dienstleistungen GmbH_ sowie die damit verbundene _Javaland
+GmbH_ organisieren die Javaland. DukeCon wurde ursprünglich für die Javaland entwickelt, dann für weitere
+DOAG-Konferenzen genutzt, ist jedoch nicht auf diese Konferenzen beschränkt. Testweise wurde DukeCon auch bereits für
+das _Java Forum Stuttgart_ verwendet und es gibt Anfragen weiterer Konferenzen.
 
 ["plantuml", "dukecon-systemcontext", "svg"]
 ------------------------------------------------
@@ -9,18 +14,22 @@ include::../images/systemcontext.puml[]
 ------------------------------------------------
 
 === Schnittstellen
-Die DukeCon Anwendung kommuniziert mit seiner Umgebung über folgende Schnittstellen:
+DukeCon kommuniziert mit seiner Umgebung über folgende Schnittstellen (Beispiel):
 
-.DOAG Backoffice (externes System):
-Als Datenlieferant nutzt DukeCon eine BackOffice-Lösung der DOAG (Deutsche ORACLE-Anwendergruppe e.V.). Ein Back-Officer der DOAG aktualisiert das Konferenzprogramm, aktualisierte Daten stehen damit auch der DukeCon-Anwendung zur Verfügung.
+.DOAG Formes (externes System):
+Als Datenlieferant nutzt DukeCon das System _Formes_ der DOAG. Die Konferenzorganisatoren (Back Office) der DOAG
+aktualisieren regelmäßig das Konferenzprogramm, die Daten stehen anschließend auch für DukeCon zur Verfügung.
 
 .Konferenzteilnehmer (Anwender):
-Die DukeCon-Anwendung offeriert eine Benutzungsschnittstelle für Konferenzteilnehmer. Sie ermöglicht das Zusammenstellen und Abrufen des Konferenzplanes. 
+DukeCon offeriert eine Benutzungsschnittstelle für Konferenzteilnehmer. Sie ermöglicht das Abrufen des allgemeinen
+Konferenzplans und das individuelle Zusammenstellen einer persönlichen Planung für die Konferenz. Ein ursprünglich
+parallel betriebener Konferenzplaner (PHP-basiert) ist aktuell nicht mehr im Betrieb.
  
 === Technologien:
-.DOAG-Backoffice Lösung und DukeCon-Anwendung:
-Übertragung der Konferenzdaten aus der DOAG-Backoffice Lösung in die DukeCon-Anwendung mittels eines REST-Services.
-(Beispiel-Datensatz)
+.DOAG-Formes und DukeCon-Integration:
+Übertragung der Konferenzdaten aus der DOAG-Backoffice Lösung in die DukeCon-Anwendung mittels Elastic und eines JSON
+Download-Services.
 
 .DukeCon-Anwendung und Konferenzteilnehmer:
-Nutzungsschnittstelle implementiert in HTML5 mit JavaScript auf Basis von Knockout. Parallel dazu ist eine natives Frontend auf Basis von Flex implementiert.
+Nutzungsschnittstelle implementiert in HTML5 mit JavaScript auf Basis von Vue.js. Daneben gibt es eine native
+Android-Anwendung.
