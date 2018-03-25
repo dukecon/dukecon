@@ -1,0 +1,117 @@
+= DukeCon
+
+The DukeCon project is going to be a (Java based) Conference App (server/infrastructure + mobile App/s) for
+http://javaland.eu[JavaLand] and other conferences, e.g., 
+
+* http://java-forum-stuttgart.de[Java Forum Stuttgart],
+* DOAG Conferences: http://2017.doag.org[2017], and http://2018.doag.org[2018].
+
+This is the _umbrella project_ with general information (documentation, architecture, requirements, issue list etc.).
+
+== Documentation / Bug reporting and requirements
+
+*Important:* Before raising issues, please check the https://github.com/dukecon/dukecon/wiki[Wiki] and the [Issue
+Tracker](https://github.com/dukecon/dukecon/issues) for further information or known problems. There is also a list of
+https://github.com/dukecon/dukecon/wiki/Anforderungen[current and required features] (currently only in German).
+
+_Please submit all problems to the general issue list first, we will sort out their target with the help of https://github-issue-mover.appspot.com/[Github Issue Mover]_. Of course, you are welcome to submit new requirements as well!
+
+== Sub projects
+[cols="1,1,2", options="header"]
+|====
+| Project
+  | Purpose
+  | Issues
+| https://github.com/dukecon/dukecon[DukeCon]
+  | Umbrella project with documentation etc.
+  | https://github.com/dukecon/dukecon/issues[Issues]
+| https://github.com/dukecon/dukecon_server[DukeCon_Server]
+  | REST services for most of Dukecon
+  | https://github.com/dukecon/dukecon_server/issues[Server Issues]
+| https://github.com/dukecon/dukecon_pwa[DukeCon_PWA]
+  | HTML/Vue.js single page frontend
+  | https://github.com/dukecon/dukecon_pwa/issues[PWA Issues]
+| https://github.com/dukecon/dukecon_android[DukeCon_Android]
+  | Native Android frontend
+  | https://github.com/dukecon/dukecon_android/issues[Android Issues]
+| https://github.com/dukecon/dukecon_infra[DukeCon_Infra]
+  | Operational runtime and CI infrastructure setup
+  | https://github.com/dukecon/dukecon_infra/issues[Infrastructure Issues]
+| https://github.com/dukecon/dukecon_feedback[DukeCon_Feedback]
+  | Optional REST services for speaker feedback
+  | https://github.com/dukecon/dukecon_feeback/issues[Feedback Issues]
+| https://github.com/dukecon/dukecon_resources[DukeCon_Resources]
+  | Functional configurations, i.e., conference configurations.
+  | https://github.com/dukecon/dukecon_resources/issues[Resources Issues]
+| https://github.com/dukecon/dukecon_admin[DukeCon_Admin]
+  | Administrative frontend
+  | https://github.com/dukecon/dukecon_admin/issues[Admin Issues]
+| https://github.com/dukecon/dukecon_docker_images[DukeCon_Docker_Images]
+  | Misc. Docker base images, e.g., for Edge services
+  | https://github.com/dukecon/dukecon_docker_images/issues[Docker Images Issues]
+| https://github.com/dukecon/dukecon_webhome[DukeCon_Webhome]
+  | DukeCon web landing page (http://dukecon.org)
+  | https://github.com/dukecon/dukecon_webhome/issues[Webhome Issues]
+| https://github.com/dukecon/dukecon_jenkins[DukeCon_Jenkins]
+  | Jenkins Seed jobs
+  | https://github.com/dukecon/dukecon_jenkins/issues[Jenkins Issues]
+| https://github.com/dukecon/doag-user-spi[DOAG User SPI]
+  | KeyCloak User Provider (allows DOAG users to login to Dukecon)
+  | https://github.com/dukecon/doag-user-spi/issues[DOAG User SPI issues]
+| https://github.com/dukecon/keycloak_postgres_https[KeyCloak Postgres HTTPS]
+  | Extended KeyCloak Docker image
+  | https://github.com/dukecon/keycloak_postgres_https/issues[KeyCloak Postgres HTTPS issues]
+| https://github.com/dukecon/inspectit_cmr[InspectIT CMR]
+  | http://inspectit.rocks[InspectIT CMR] Docker base image
+  | https://github.com/dukecon/inspectit_cmr/issues[InspectIT CMR Issues]
+|====
+
+== Deprecated sub projects
+
+[cols="1,1,2,2", options="header"]
+|====
+| Project 
+  | Purpose
+  | Issues
+  | Reason
+| https://github.com/dukecon/dukecon-cordova[DukeCon-Cordova]
+  | Cordova wrapper of https://github.com/dukecon/dukecon_html5[DukeCon_HTML5] (mobile for iOS and Android)
+  | https://github.com/dukecon/dukecon-cordova/issues[Cordova App Issues]
+  | Replaced by https://github.com/dukecon/dukecon_pwa[DukeCon_PWA]
+| https://github.com/dukecon/dukecon_html5[DukeCon_HTML5]
+  | HTML5 App (mobile + browser)
+  | https://github.com/dukecon/dukecon_html5/issues[HTML5 App Issues]
+  | Replaced by https://github.com/dukecon/dukecon_pwa[DukeCon_PWA]
+| https://github.com/dukecon/dukecon_server_docker[DukeCon_Server_Docker]
+  | Docker container with the server application
+  | https://github.com/dukecon/dukecon_server_docker/issues[DukeCon Docker Issues]
+  | Docker build incorporated into https://github.com/dukecon/dukecon_server[DukeCon_Server] directly
+| https://github.com/dukecon/dukecon_flex[DukeCon_Flex]
+  | Flex (Flash) App (mobile)
+  | https://github.com/dukecon/dukecon_flex/issues[Flex App Issues]
+  | Not actively maintained any longer
+| https://github.com/dukecon/dukecon_meteor[DukeCon_Meteor]
+  | Meteor client + server
+  | https://github.com/dukecon/dukecon_meteor/issues[DukeCon Meteor Issues]
+  | Not actively maintained any longer
+| https://github.com/dukecon/multi-module-maven-release-plugin[Multi module Maven Release Plugin (Fork)]
+  | Fork of the https://github.com/danielflower/multi-module-maven-release-plugin[Multi module Maven Release Plugin]
+  | -
+  | Automatic releasing of DukeCon components is not used any longer
+| https://github.com/dukecon/inspectit-platform-docker[InspectIT Platform Docker (Fork)]
+  | Fork of https://github.com/ClaudioWaldvogel/inspectit-platform-docker[InspectIT Platform Docker] 
+  | -
+  | -
+| https://github.com/dukecon/docker-cordova[Docker-Cordova]
+  | Fork of https://github.com/oren/docker-cordova[Docker-Cordova] 
+  | -
+  | -
+|====
+
+== Unclear status
+
+The following projects have an unclear maintenance status (as of 2018-03-24):
+
+* https://github.com/dukecon/dukecon_monitoring
+* https://github.com/dukecon/url-schema-test
+* https://github.com/dukecon/android-images
