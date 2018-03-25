@@ -12,7 +12,6 @@
 		<asciidoctor.maven.plugin.version>1.5.3</asciidoctor.maven.plugin.version>
         <asciidoctorj.version>1.5.3.2</asciidoctorj.version>
         <asciidoctorj.diagram.version>1.3.1</asciidoctorj.diagram.version>
-		<jruby.version>1.7.21</jruby.version>
 		
 		<nexus.repository.host>dev.dukecon.org</nexus.repository.host>
 		<nexus.repository.port />
@@ -53,13 +52,6 @@
                 <artifactId>asciidoctor-maven-plugin</artifactId>
                 <version>${asciidoctor.maven.plugin.version}</version>
                 <dependencies>
-                    <!-- Comment this section to use the default jruby artifact provided by the plugin -->
-                    <dependency>
-                        <groupId>org.jruby</groupId>
-                        <artifactId>jruby-complete</artifactId>
-                        <version>${jruby.version}</version>
-                    </dependency>
-                    <!-- Comment this section to use the default AsciidoctorJ artifact provided by the plugin -->
                     <dependency>
                         <groupId>org.asciidoctor</groupId>
                         <artifactId>asciidoctorj</artifactId>
