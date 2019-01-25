@@ -1,5 +1,6 @@
 @startuml
 skinparam handwritten true
+skinparam linetype ortho
 
 actor :Conference Participant: as participant
 

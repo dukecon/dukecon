@@ -1,4 +1,6 @@
 @startuml
+skinparam linetype ortho
+
 actor browser as "User/Browser"
 participant html5 as "HTML5-Client"
 participant Keycloak
