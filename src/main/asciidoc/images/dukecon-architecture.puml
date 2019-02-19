@@ -25,8 +25,8 @@ cloud "DukeCon Infrastructure" {
         [DukeCon] <<Service>> as DukeconService
     }
 
-    node DukeCon-Feedback-Server <<Docker : Java9>> #red {
-        [DukeCon-Feedback] <<Service>> as DukeconFeedbackService #red
+    node DukeCon-Feedback-Server <<Docker : Java9>> {
+        [DukeCon-Feedback] <<Service>> as DukeconFeedbackService
     }
 
     node KeyCloak-Server <<Docker : WildFly>> {
@@ -41,8 +41,8 @@ cloud "DukeCon Infrastructure" {
         }
         [DukeconService] --> [DukeCon_PostgreSQL] : JDBC
 
-        node DukeCon-Feedback-DB <<Docker : PostgreSQL>> #red {
-            database DukeCon_Feedback_PostgreSQL as DukeconFeedbackDB #red
+        node DukeCon-Feedback-DB <<Docker : PostgreSQL>> {
+            database DukeCon_Feedback_PostgreSQL as DukeconFeedbackDB
         }
         [DukeconFeedbackService] ..> DukeconFeedbackDB : JDBC
         DukeconService <.right. DukeconFeedbackService : Retrieve talk + speaker data
