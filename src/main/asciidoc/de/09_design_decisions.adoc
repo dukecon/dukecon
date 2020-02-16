@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/09_design_decisions.adoc
 [[section-design-decisions]]
 
 == Entwurfsentscheidungen

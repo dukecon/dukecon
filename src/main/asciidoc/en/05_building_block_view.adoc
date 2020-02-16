@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/05_building_block_view.adoc
 [[section-building-block-view]]
 == Building Block View
+include::config.adoc[]
+{improve}
 
 
 

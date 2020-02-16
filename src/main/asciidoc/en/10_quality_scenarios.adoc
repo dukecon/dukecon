@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/10_quality_scenarios.adoc
 [[section-quality-scenarios]]
 == Quality Scenarios
+include::config.adoc[]
+{improve}
 
 
 

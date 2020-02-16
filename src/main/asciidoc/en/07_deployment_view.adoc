@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/07_deployment_view.adoc
 [[section-deployment-view]]
 == Deployment View
+include::config.adoc[]
+{improve}
 
 
 

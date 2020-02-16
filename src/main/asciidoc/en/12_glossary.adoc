@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/12_glossary.adoc
 [[section-glossary]]
 == Glossary
+include::config.adoc[]
+{improve}
 
  
 

@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/appendix-contributing.adoc
 :numbered!:
 
 [appendix]

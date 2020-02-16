@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/10_quality_scenarios.adoc
 [[section-quality-scenarios]]
 == Qualitätsszenarien
 

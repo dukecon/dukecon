@@ -1,3 +1,6 @@
+:filename: main/asciidoc/en/template-blackbox-short.adoc
+include::config.adoc[]
+{improve}
 // blackbox template short
 
 _BuildingBlockName_ Blackbox description

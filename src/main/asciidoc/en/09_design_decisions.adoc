@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/09_design_decisions.adoc
 [[section-design-decisions]]
 == Design Decisions
+include::config.adoc[]
+{improve}
 
 
 

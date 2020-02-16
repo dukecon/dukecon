@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/03_system_scope_and_context.adoc
 [[section-system-scope-and-context]]
 == System Scope and Context
+include::config.adoc[]
+{improve}
 
 
 

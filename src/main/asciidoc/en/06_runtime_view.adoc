@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/06_runtime_view.adoc
 [[section-runtime-view]]
 == Runtime View
+include::config.adoc[]
+{improve}
 
 
 

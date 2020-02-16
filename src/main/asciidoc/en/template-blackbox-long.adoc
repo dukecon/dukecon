@@ -1,3 +1,6 @@
+:filename: main/asciidoc/en/template-blackbox-long.adoc
+include::config.adoc[]
+{improve}
 
 // blackbox template long
 

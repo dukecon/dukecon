@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/02_architecture_constraints.adoc
 [[section-architecture-constraints]]
 == Randbedingungen
 (engl.: Architecture Constraints)

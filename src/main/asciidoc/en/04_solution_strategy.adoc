@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/04_solution_strategy.adoc
 [[section-solution-strategy]]
 == Solution Strategy
+include::config.adoc[]
+{improve}
 
 
 

@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/06_runtime_view.adoc
 [[section-runtime-view]]
 == Laufzeitsicht
 

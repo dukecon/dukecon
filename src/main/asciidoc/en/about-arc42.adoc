@@ -1,9 +1,12 @@
+:filename: main/asciidoc/en/about-arc42.adoc
 :homepage: http://arc42.org
 
 :keywords: software-architecture, documentation, template, arc42
 
 :numbered!:
 == About arc42
+include::config.adoc[]
+{improve}
 
 [role="lead"]
 arc42, the Template for documentation of

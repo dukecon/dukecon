@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/11_technical_risks.adoc
 [[section-technical-risks]]
 == Risiken
 

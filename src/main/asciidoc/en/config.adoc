@@ -7,3 +7,6 @@
 
 // where are images located?
 :imagesdir: ./images
+
+:githubbase: https://github.com/dukecon/dukecon
+:improve: {githubbase}/blob/master/src/{filename}[improve this doc]

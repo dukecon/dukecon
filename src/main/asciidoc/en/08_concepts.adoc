@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/08_concepts.adoc
 [[section-concepts]]
 == Concepts
+include::config.adoc[]
+{improve}
 
 
 

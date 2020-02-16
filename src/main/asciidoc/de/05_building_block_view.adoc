@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/05_building_block_view.adoc
 [[section-building-block-view]]
 
 

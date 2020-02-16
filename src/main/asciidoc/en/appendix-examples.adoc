@@ -1,7 +1,10 @@
+:filename: main/asciidoc/en/appendix-examples.adoc
 :numbered!:
 
 [appendix]
 == Examples
+include::config.adoc[]
+{improve}
 
 * http://aim42.github.io/htmlSanityCheck/hsc_arc42.html[HTML Sanity Checker]
 * http://www.dokchess.de/dokchess/arc42/[DocChess] (german)

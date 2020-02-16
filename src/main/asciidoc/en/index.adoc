@@ -1,3 +1,4 @@
+:filename: main/asciidoc/en/index.adoc
 // header file for arc42-template,
 // including all help texts
 //
@@ -15,6 +16,9 @@ include::config.adoc[]
 :toc: left
 :toclevels: 3
 :sectlinks:
+
+include::config.adoc[]
+{improve}
 
 //additional style for arc42 help callouts
 ifdef::basebackend-html[]

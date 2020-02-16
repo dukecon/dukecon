@@ -1,8 +1,11 @@
+:filename: main/asciidoc/en/appendix-contributing.adoc
 :numbered!:
 
 [appendix]
 [[contributions]]
 == Acknowledgements and collaborations
+include::config.adoc[]
+{improve}
 
 
 arc42 originally envisioned by

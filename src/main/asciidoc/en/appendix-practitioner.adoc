@@ -1,6 +1,9 @@
+:filename: main/asciidoc/en/appendix-practitioner.adoc
 :numbered!:
 
 [appendix]
 == Approved Practitioner for arc42
+include::config.adoc[]
+{improve}
 
 (TODO)

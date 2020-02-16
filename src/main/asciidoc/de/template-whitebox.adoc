@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/template-whitebox.adoc
 
 // whitebox template
 

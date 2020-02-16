@@ -1,8 +1,11 @@
+:filename: main/asciidoc/en/appendix-references.adoc
 :numbered!:
 
 [[bibliography]]
 [appendix]
 == Literature and references
+include::config.adoc[]
+{improve}
 
 
 Starke-2014:: Gernot Starke: Effektive Softwarearchitekturen -

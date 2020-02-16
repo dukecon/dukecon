@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/11_technical_risks.adoc
 [[section-technical-risks]]
 == Technical Risks
+include::config.adoc[]
+{improve}
 
 
 

@@ -1,3 +1,4 @@
+:filename: dukecon/src/main/asciidoc/de/about-arc42.adoc
 :homepage: http://arc42.org
 
 :keywords: software-architecture, documentation, template, arc42

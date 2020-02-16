@@ -1,3 +1,6 @@
+:filename: main/asciidoc/en/template-whitebox.adoc
+include::config.adoc[]
+{improve}
 
 // whitebox template
 

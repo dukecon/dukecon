@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/01_introduction_and_goals.adoc
 [[section-introduction-and-goals]]
 == Introduction and Goals
+include::config.adoc[]
+{improve}
 
 
 The introduction to the architecture documentation should list the driving forces that software architects must consider in their decisions.

@@ -1,3 +1,4 @@
+:filename: dukecon/samples/README.adoc
 = Test HTTP/REST requests
 
 If you want to test DukeCon endpoints in different environments, i.e.., on _localhost_, on one of the _staging_

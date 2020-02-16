@@ -1,5 +1,8 @@
+:filename: main/asciidoc/en/02_architecture_constraints.adoc
 [[section-architecture-constraints]]
 == Architecture Constraints
+include::config.adoc[]
+{improve}
 
 
 
